@@ -17,8 +17,7 @@ header {
     h1,
     h2 {
         position: relative;
-        // display: flex;
-        // justify-content: space-around;
+        line-height: 1;
         
         span:first-child {
             font-family: $font-italo;
@@ -33,22 +32,22 @@ header {
 
             span:first-child {
                 position: absolute;
-                top: 0;
+                top: 50%;
                 left: 25%;
 
                 color: $text-italo-secondary;
     
-                transform: translateX(-50%);
+                transform: translate(-50%, -50%);
             }
     
             span:last-child {
                 position: absolute;
-                top: 0;
+                top: 50%;
                 right: 25%;
 
                 color: $text-amanda-secondary;
     
-                transform: translateX(50%);
+                transform: translate(50%, -50%);
             }
         }
 
