@@ -1,0 +1,76 @@
+<html lang="pt">
+head
+    script(async src="https://www.googletagmanager.com/gtag/js?id=UA-154569990-3")
+    script
+        include ./includes/gtag.js
+    link(rel="apple-touch-icon" sizes="57x57" href="./assets/meta/apple-icon-57x57.png")
+    link(rel="apple-touch-icon" sizes="60x60" href="./assets/meta/apple-icon-60x60.png")
+    link(rel="apple-touch-icon" sizes="72x72" href="./assets/meta/apple-icon-72x72.png")
+    link(rel="apple-touch-icon" sizes="76x76" href="./assets/meta/apple-icon-76x76.png")
+    link(rel="apple-touch-icon" sizes="114x114" href="./assets/meta/apple-icon-114x114.png")
+    link(rel="apple-touch-icon" sizes="120x120" href="./assets/meta/apple-icon-120x120.png")
+    link(rel="apple-touch-icon" sizes="144x144" href="./assets/meta/apple-icon-144x144.png")
+    link(rel="apple-touch-icon" sizes="152x152" href="./assets/meta/apple-icon-152x152.png")
+    link(rel="apple-touch-icon" sizes="180x180" href="./assets/meta/apple-icon-180x180.png")
+    link(rel="icon" type="image/png" sizes="192x192" href="./assets/meta/android-icon-192x192.png")
+    link(rel="icon" type="image/png" sizes="32x32" href="./assets/meta/favicon-32x32.png")
+    link(rel="icon" type="image/png" sizes="96x96" href="./assets/meta/favicon-96x96.png")
+    link(rel="icon" type="image/png" sizes="16x16" href="./assets/meta/favicon-16x16.png")
+    link(rel="manifest" href="./assets/meta/manifest.json")
+    meta(name="msapplication-TileColor" content="#f5f5f5")
+    meta(name="msapplication-TileImage" content="./assets/meta/ms-icon-144x144.png")
+    meta(name="theme-color" content="#f5f5f5")
+    meta(name="robots" content="index,follow")
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible" content="IE=edge")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    meta(name="description" content="Vianna com dois N's e Iung com I")
+    style
+        include ./compiled/css/page/home.css
+    title Vianna Iung
+body
+    header
+        h1 
+            span Vianna 
+            span Iung
+        h2 
+            span Vianna com dois N's 
+            span Iung com I
+    main
+        section.item.italo
+            figure.item__fundo
+                picture
+                    source(media="(min-width: 1200px)" data-srcset="./assets/img/italo.webp" type="image/webp")
+                    source(media="(min-width: 1200px)" data-srcset="./assets/img/italo.jpg" type="image/jpeg")
+                    source(media="(max-width: 1200px)" data-srcset="./assets/img/sizes/italo-lg.webp" type="image/webp")
+                    source(media="(max-width: 1200px)" data-srcset="./assets/img/sizes/italo-lg.jpg" type="image/jpeg")
+                    source(media="(max-width: 768px)" data-srcset="./assets/img/sizes/italo-md.webp" type="image/webp")
+                    source(media="(max-width: 768px)" data-srcset="./assets/img/sizes/italo-md.jpg" type="image/jpeg")
+                    source(media="(max-width: 576px)" data-srcset="./assets/img/sizes/italo-sm.webp" type="image/webp")
+                    source(media="(max-width: 576px)" data-srcset="./assets/img/sizes/italo-sm.jpg" type="image/jpeg")
+                    img.lazy(data-src="./assets/img/italo.jpg" alt="Ítalo Iung" title="Ítalo Iung")
+            .item__meta
+                h2.glitch(data-text="Ítalo Iung") Ítalo Iung
+                h3.glitch(data-text="Desenvolvedor Front-End") Desenvolvedor Front-End
+            a(href="https://italo.iung.me")
+        section.item.amanda
+            figure.item__fundo
+                picture
+                    source(media="(min-width: 1200px)" data-srcset="./assets/img/amanda.webp" type="image/webp")
+                    source(media="(min-width: 1200px)" data-srcset="./assets/img/amanda.jpg" type="image/jpeg")
+                    source(media="(max-width: 1200px)" data-srcset="./assets/img/sizes/amanda-lg.webp" type="image/webp")
+                    source(media="(max-width: 1200px)" data-srcset="./assets/img/sizes/amanda-lg.jpg" type="image/jpeg")
+                    source(media="(max-width: 768px)" data-srcset="./assets/img/sizes/amanda-md.webp" type="image/webp")
+                    source(media="(max-width: 768px)" data-srcset="./assets/img/sizes/amanda-md.jpg" type="image/jpeg")
+                    source(media="(max-width: 576px)" data-srcset="./assets/img/sizes/amanda-sm.webp" type="image/webp")
+                    source(media="(max-width: 576px)" data-srcset="./assets/img/sizes/amanda-sm.jpg" type="image/jpeg")
+                    img.lazy(data-src="./assets/img/amanda.jpg" alt="Amanda Iung" title="Amanda Iung")
+            .item__meta
+                h2 Amanda Iung
+                h3 Jornalista
+            a(href="https://amanda.iung.me")
+    footer
+        p.
+            Copyright © !{locals.year} por Ítalo Iung
+    script
+        include ./compiled/js/all.js

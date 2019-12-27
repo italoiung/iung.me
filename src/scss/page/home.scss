@@ -1,0 +1,150 @@
+@import "../base/index";
+
+body {
+    display: grid;
+    grid-template-rows: 2fr 10fr 1fr;
+
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    text-align: center;
+
+    h1,
+    h2 {
+        position: relative;
+        // display: flex;
+        // justify-content: space-around;
+        
+        span:first-child {
+            font-family: $font-italo;
+        }
+        
+        span:last-child {
+            font-family: $font-amanda;
+        }
+        
+        @include sm {
+            height: 50%;
+
+            span:first-child {
+                position: absolute;
+                top: 0;
+                left: 25%;
+
+                color: $text-italo-secondary;
+    
+                transform: translateX(-50%);
+            }
+    
+            span:last-child {
+                position: absolute;
+                top: 0;
+                right: 25%;
+
+                color: $text-amanda-secondary;
+    
+                transform: translateX(50%);
+            }
+        }
+
+    }
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+
+    .item {
+        position: relative;
+
+        flex: 1 1 100%;
+
+        @include sm {
+            flex-basis: 50%;
+        }
+
+        a {
+            display: block;
+            position: absolute;
+            z-index: 3;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+
+        &.italo {
+            font-family: $font-italo;
+
+            background-color: $text-italo;
+            color: $text-italo-secondary;
+        }
+
+        &.amanda {
+            font-family: $font-amanda;
+
+            background-color: $text-amanda;
+            color: $text-amanda-secondary;
+        }
+
+        .item__meta {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 2;
+
+            text-align: center;
+
+            width: 80%;
+
+            transform: translate(-50%, -50%);
+
+            h2 {
+                @include fontSize(40);
+            }
+
+            h3 {
+                @include fontSize(32);
+            }
+        }
+
+        .item__fundo {
+            opacity: .25;
+
+            @include lg {
+                opacity: 0;
+            }
+
+            transition: 0.5s opacity cubic-bezier(0.645, 0.045, 0.355, 1);
+
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+        @include on-event {
+            .item__fundo {
+                opacity: 0.75;
+            }
+        }
+    }
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    
+    font-family: $font-amanda;
+    
+    padding: 0 1rem;
+
+    color: $text-amanda-secondary
+}

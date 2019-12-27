@@ -1,0 +1,80 @@
+html {
+    box-sizing: border-box;
+    font-size: 75%;
+
+    @include sm {
+        font-size: 100%;
+    }
+
+    @include md {
+        font-size: 125%;
+    }
+}
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    color: $fallback-text;
+    background: $fallback-bg;
+    background: linear-gradient(90deg, $bg-italo 50%, $bg-amanda 50%);
+}
+
+.glitch {
+    position: relative;
+    letter-spacing: 0.5rem;
+    animation: glitch-skew 1s infinite linear alternate-reverse;
+
+    &::before {
+        @include glitchCopy;
+
+        left: 2px;
+
+        text-shadow: -2px 0 $highlight-italo;
+
+        clip: rect(44px, 450px, 56px, 0);
+
+        animation: glitch-anim 5s infinite linear alternate-reverse;
+    }
+
+    &::after {
+        @include glitchCopy;
+
+        left: -2px;
+
+        text-shadow: -2px 0 $bg-italo, 2px 2px $highlight-italo;
+
+        animation: glitch-anim2 1s infinite linear alternate-reverse;
+    }
+}
+
+@keyframes glitch-anim {
+    $steps: 20;
+    @for $i from 0 through $steps {
+        #{percentage($i*(1/$steps))} {
+            clip: rect(random(100) + px, 9999px, random(100) + px, 0);
+            transform: skew((random(100) / 100) + deg);
+        }
+    }
+}
+
+@keyframes glitch-anim2 {
+    $steps: 20;
+    @for $i from 0 through $steps {
+        #{percentage($i*(1/$steps))} {
+            clip: rect(random(100) + px, 9999px, random(100) + px, 0);
+            transform: skew((random(100) / 100) + deg);
+        }
+    }
+}
+
+@keyframes glitch-skew {
+    $steps: 10;
+    @for $i from 0 through $steps {
+        #{percentage($i*(1/$steps))} {
+            transform: skew((random(10) - 5) + deg);
+        }
+    }
+}
